@@ -1,0 +1,8 @@
+#heading,.subchild{
+    color: red;
+    font-size: 25px;
+}
+#heading2,.subchild2{
+    color: green;
+    font-size: 20px;
+}
