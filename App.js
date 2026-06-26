@@ -1,61 +1,208 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-//React.createElement => ReactElement -JS Object => HtmlElement(Render)
-//const rootData = React.createElement(
-                        // 'h1',
-                        // {id:'heading'},
-                        // "Heading"
-                        // );
+/**
+ * Swiggy App Layout:
+ * Components we need to create:
+ * Header
+ *  - Logo
+ *  - Nav Items
+ * Body
+ *  - Search Bar
+ *  - Restaurant Container
+ *    - Restaurant Card
+ * Footer
+ *  -copyright
+ *  - links
+ *  - Address
+ *  - Contact
+ */
 
-
-//JSX => React.createElement => ReactElement -JS Object => HtmlElement(Render)                      
-//const JSXData = <h1 id="heading" tabIndex="0">Heading</h1>;
-//Transpiled/complied before it reaches to JS engine By - Parcel - Babel
-
-const testHeading = <span id="heading" tabIndex="0">Headingsdsd</span>;
-
-//JSX code writtent in multiple lines should be wrapped in parenthesis to avoid error
-const heading = (
-    <h1 className="head" tabIndex="0">
-        Namaste React using JSX
-    </h1>
-);
-
-//Functional Component
-const HeadingComponent = () => {
-    <h1>this is functional component</h1>;
-};
-//or we can also write it in one line as below
-const HeadingComponent2 = () => <div><HeadingComponent />this is functional component 2</div>;
-
-//function returning multiple elements should be wrapped in parenthesis and also in a single parent element like div, section, article etc. to avoid error
-const HeadingComponent3 = () => {
-    const name="sahil";
+const Header = () => {
     return (
-        <div>
-            <h1>this is functional component 3</h1>
-            <p>this is a {name} {testHeading}</p>
+        <div className="header">
+            <div className="logocontainer">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="logo" width="50" className='logo' />
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    );
+};
+
+const resturantData = {
+  "cardType": "seeAllRestaurants",
+  "layoutAlignmentType": "VERTICAL",
+  "data": {
+    "type": "seeAllRestaurants",
+    "data": {
+      "title": "SEE ALL",
+      "totalOpenRestaurants": 1787,
+      "cards": [
+        {
+          "type": "restaurant",
+          "data": {
+            "type": "F",
+            "id": "307050",
+            "name": "Call Me Chow",
+            "city": "Bangalore",
+            "area": "Koramangala",
+            "totalRatingsString": "1000+ ratings",
+            "cuisines": [
+              "Chinese",
+              "Pan-Asian"
+            ],
+            "costForTwo": 40000,
+            "costForTwoString": "₹400 FOR TWO",
+            "deliveryTime": 29,
+            "minDeliveryTime": 29,
+            "maxDeliveryTime": 29,
+            "slaString": "29 MINS",
+            "lastMileTravel": 1.5,
+            "slugs": {
+              "restaurant": "call-me-chow-koramangala",
+              "city": "bangalore"
+            },
+            "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pizza.png"
+          }
+        },
+        {
+          "type": "restaurant",
+          "data": {
+            "type": "F",
+            "id": "307051",
+            "name": "Burger Junction",
+            "city": "Bangalore",
+            "area": "Indiranagar",
+            "totalRatingsString": "5000+ ratings",
+            "cuisines": [
+              "Burgers",
+              "Fast Food"
+            ],
+            "costForTwo": 35000,
+            "costForTwoString": "₹350 FOR TWO",
+            "deliveryTime": 25,
+            "minDeliveryTime": 25,
+            "maxDeliveryTime": 30,
+            "slaString": "25 MINS",
+            "lastMileTravel": 2.1,
+            "slugs": {
+              "restaurant": "burger-junction-indiranagar",
+              "city": "bangalore"
+            },
+            "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/South%20Indian.png"
+          }
+        },
+        {
+          "type": "restaurant",
+          "data": {
+            "type": "F",
+            "id": "307052",
+            "name": "Pizza World",
+            "city": "Bangalore",
+            "area": "HSR Layout",
+            "totalRatingsString": "2000+ ratings",
+            "cuisines": [
+              "Pizza",
+              "Italian"
+            ],
+            "costForTwo": 60000,
+            "costForTwoString": "₹600 FOR TWO",
+            "deliveryTime": 35,
+            "minDeliveryTime": 30,
+            "maxDeliveryTime": 40,
+            "slaString": "35 MINS",
+            "lastMileTravel": 3.2,
+            "slugs": {
+              "restaurant": "pizza-world-hsr-layout",
+              "city": "bangalore"
+            },
+            "image":"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Burger.png"
+          }
+        },
+        {
+          "type": "restaurant",
+          "data": {
+            "type": "F",
+            "id": "307053",
+            "name": "Biryani House",
+            "city": "Bangalore",
+            "area": "BTM Layout",
+            "totalRatingsString": "10000+ ratings",
+            "cuisines": [
+              "Biryani",
+              "North Indian"
+            ],
+            "costForTwo": 50000,
+            "costForTwoString": "₹500 FOR TWO",
+            "deliveryTime": 32,
+            "minDeliveryTime": 30,
+            "maxDeliveryTime": 35,
+            "slaString": "32 MINS",
+            "lastMileTravel": 4.0,
+            "slugs": {
+              "restaurant": "biryani-house-btm-layout",
+              "city": "bangalore"
+            }
+          }
+        }
+      ]
+    }
+  }
+};
+
+
+
+const Body = () => {
+    return (
+        <div className="body">
+                <div className="searchbar">
+                    <input type="text" placeholder="Search for restaurant, cuisine or a dish" className='search-input' />
+                </div>
+                <div className="restaurant-container">
+                    {
+                        resturantData?.data?.data?.cards.map((resturant,index) => 
+                            <RestaurantCard apiData={resturant} key={resturant?.data?.id??index}/>
+                        )
+                    }
+                </div>
+        </div>
+    );
+};
+
+const RestaurantCard = (props) => {
+    console.log(props.apiData);
+    
+    //one way to fetch each prop and then use destructuring
+    //const {name,cuisines,costForTwo} = props.apiData?.data;
+
+    //second way to fetch all  props using destructuring and then user destrucing again on its elements/values
+    const {apiData} = props;//destructuring props
+    const {name,cuisines,costForTwo,image} = apiData?.data;//again destructuring
+
+    return (
+        <div className="restaurant-card" style={{ backgroundColor: "#ab353517", padding: "20px", borderRadius: "10px", width: "300px", margin: "10px" }}>
+            <img src={image??'https://cdn.brandfetch.io/ideeTxiKQK/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B'} alt="restaurant" className='restaurant-image' style={{ width: "100%", height: "auto",padding: "0px" }} />
+            <h3 className='restaurant-name'>{name}</h3>
+            <p className='restaurant-cuisine'>{cuisines.join(',',' ')}</p>
+            <p className='restaurant-rating'>{costForTwo/100}</p>
         </div>
     );
 }
-//better version of above code is as below and it only returns the JSX code
-//Component composition - we can use one component inside another component
-const HeadingComponent4 = () => (
-   <div className="head">
-       {HeadingComponent3()}{/* we can also call the functionnal component like this as a function bacause at the end of day a functional compoent is a normal js function and we can used js code inside parenthesis */}
-       <HeadingComponent3 />
-       <HeadingComponent3></HeadingComponent3>
-        <h1>this is functional component 4</h1>
-        <p>this is a paragraph</p>
-   </div>
-);
 
-//console.log(rootData);
-//console.log(JSXData);
-//both of them give same response in console and also are same but the second one is more readable and easy to write and understand as compared to the first one which is created using react library
+const AppLayout = () => {
+    return (
+        <div className="app">
+            <Header />
+            <Body />
+        </div>
+    );
+};
 
-const root    = ReactDOM.createRoot(document.getElementById('root'));//this is how we create root using react dom library
-//this is the place where each and every code will be executed or rendered in react
-root.render(<HeadingComponent4 />);//this is how we render react element to the dom using react dom library
-//this is how we render functional component to the dom using react dom library   
+const root    = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<AppLayout />);

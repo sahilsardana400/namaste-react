@@ -6,3 +6,42 @@
     color: green;
     font-size: 20px;
 }
+.header{
+    display: flex;
+    border: 1px solid black;
+}
+.header > .logocontainer{
+    flex: 1;
+}
+.nav-items > ul{
+    display: flex;
+    margin: 0px 10px;
+    list-style: none;
+}
+.nav-items > ul > li{
+    padding: 10px 10px;
+    margin: 0px 10px;
+}
+.restaurant-card {
+    border: 1px solid black;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+}
+.restaurant-card:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+.restaurant-card img {
+    width: 100%;
+    height: auto;
+}
+.searchbar {
+    display: flex;
+    margin: 10px;
+    padding:10px;
+}
+.restaurant-container {
+    display: flex;
+    flex-wrap: wrap;
+}
