@@ -20,3 +20,30 @@
   # https://parceljs.org/  Documentation
   # Different dev and production bundles
   # browsers list: To enable our app to fully work on browsers: https://browserslist.dev/
+
+
+
+
+
+
+
+
+
+
+# Food ordering
+  /**
+ * Swiggy App Layout:
+ * Components we need to create:
+ * Header
+ *  - Logo
+ *  - Nav Items
+ * Body
+ *  - Search Bar
+ *  - Restaurant Container
+ *    - Restaurant Card
+ * Footer
+ *  -copyright
+ *  - links
+ *  - Address
+ *  - Contact
+ */

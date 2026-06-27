@@ -1,39 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-/**
- * Swiggy App Layout:
- * Components we need to create:
- * Header
- *  - Logo
- *  - Nav Items
- * Body
- *  - Search Bar
- *  - Restaurant Container
- *    - Restaurant Card
- * Footer
- *  -copyright
- *  - links
- *  - Address
- *  - Contact
- */
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logocontainer">
-                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="logo" width="50" className='logo' />
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                </ul>
-            </div>
-        </div>
-    );
-};
+import Header from './components/Header';
+import Body from './components/Body';
 
 const resturantData = {
   "cardType": "seeAllRestaurants",
@@ -154,23 +122,6 @@ const resturantData = {
       ]
     }
   }
-};
-
-const Body = () => {
-    return (
-        <div className="body">
-                <div className="searchbar">
-                    <input type="text" placeholder="Search for restaurant, cuisine or a dish" className='search-input' />
-                </div>
-                <div className="restaurant-container">
-                    {
-                        resturantData?.data?.data?.cards.map((resturant,index) => 
-                            <RestaurantCard apiData={resturant} key={resturant?.data?.id??index}/>
-                        )
-                    }
-                </div>
-        </div>
-    );
 };
 
 const RestaurantCard = (props) => {
