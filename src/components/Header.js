@@ -1,5 +1,7 @@
 import { LOGO_URL } from "../utils/constants";
+import { useState,useEffect } from "react";
 const Header = () => {
+    const [currentlyLoggedIn,setcurrentlyLoggedIn] = useState(false);
     return (
         <div className="header">
             <div className="logocontainer">
@@ -10,6 +12,12 @@ const Header = () => {
                     <li>Home</li>
                     <li>About</li>
                     <li>Contact</li>
+                    <button className="login" onClick={() => {
+                        let updatedLoginstatus = (currentlyLoggedIn)?false:true;
+                        setcurrentlyLoggedIn(updatedLoginstatus);
+                    }}>
+                        {currentlyLoggedIn === true?'Logout':'Login'}
+                    </button>
                 </ul>
             </div>
         </div>

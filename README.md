@@ -22,7 +22,7 @@
   # browsers list: To enable our app to fully work on browsers: https://browserslist.dev/
 
 
-
+  # UseState() - so whenever a state variable updates react re-render the whole component- ***very Important***
 
 
 
